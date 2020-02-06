@@ -1,0 +1,10 @@
+.root {
+    -fx-background-image: url(https://images6.alphacoders.com/703/703152.jpg);
+    -fx-background-size: cover;
+}
+
+.button {
+    -fx-border-color: black;
+    -fx-font-family: Alegreya;
+    -fx-font-size: 50px;
+}
