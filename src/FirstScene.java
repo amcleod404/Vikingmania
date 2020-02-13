@@ -33,5 +33,9 @@ public class FirstScene extends Stage {
 
     }
 
+    public Button getStartButton() {
+        return startButton;
+    }
+
 
 }

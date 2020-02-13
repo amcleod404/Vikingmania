@@ -83,7 +83,8 @@ public class ThirdScene extends Stage {
 
     public void setContinueEvent() {
         contButton.setOnAction(actionEvent -> {
-            new Universe();
+            Island1 island1 = new Island1();
+            island1.setScene();
             this.close();
         });
     }
