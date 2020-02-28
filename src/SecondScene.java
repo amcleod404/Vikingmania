@@ -60,6 +60,7 @@ public class SecondScene extends Stage {
         scene.getStylesheets().add("configStyle.css");
         scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Alegreya&display=swap");
         continueButton.setDefaultButton(true);
+        this.setFullScreen(true);
         this.setTitle("Welcome to VikingMania!");
         this.setScene(scene);
         this.show();
@@ -261,10 +262,10 @@ public class SecondScene extends Stage {
                         + "Please change the difficulty or allocate more skill points..");
                 errorAlert.showAndWait();
             } else {
-                player1.setSkillPointsFighter(sailorSlide.getValue());
-                player1.setSkillPointsEngineer(barterSlide.getValue());
-                player1.setSkillPointsPilot(engineerSlide.getValue());
-                player1.setSkillPointsMerchant(fighterSlide.getValue());
+                player1.setSkillPointsFighter(fighterSlide.getValue());
+                player1.setSkillPointsEngineer(engineerSlide.getValue());
+                player1.setSkillPointsPilot(sailorSlide.getValue());
+                Player.setSkillPointsMerchant(barterSlide.getValue());
                 player1.setDifficultyLevel(playerDiff[0]);
                 player1.setTotalSkillPoints(playerDiff[0].getSkillPointAllocation());
                 player1.setName(characterName.getText());

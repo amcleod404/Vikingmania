@@ -29,6 +29,7 @@ public class FirstScene extends Stage {
         sceneOne.getStylesheets().add("startStyle.css");
         this.setTitle("Welcome to VikingMania!");
         this.setScene(sceneOne);
+        this.setFullScreen(true);
         this.show();
 
     }
@@ -36,6 +37,4 @@ public class FirstScene extends Stage {
     public Button getStartButton() {
         return startButton;
     }
-
-
 }
