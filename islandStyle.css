@@ -1,0 +1,11 @@
+.root {
+    -fx-background-image: url("island_background.jpg");
+    -fx-background-size: cover;
+    -fx-padding: 3em;
+    -fx-font-family: Alegreya; -fx-font-size: 25px;
+}
+
+.button {
+    -fx-border-color: black;
+    -fx-font-size: 25px;
+}

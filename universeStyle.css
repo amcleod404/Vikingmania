@@ -1,0 +1,12 @@
+.root {
+    -fx-background-image : url("paper.jpg");
+    -fx-padding: 3em;
+}
+
+#point:hover {
+    -fx-fill: "red";
+}
+
+#spawn {
+    -fx-fill: "blue";
+}

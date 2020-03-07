@@ -1,0 +1,11 @@
+.root {
+    -fx-background-image: url("Bandit.png");
+    -fx-background-size: cover;
+    -fx-padding: 3em;
+    -fx-font-family: Alegreya;
+}
+
+.button {
+    -fx-border-color: white;
+    -fx-font-size: 20px;
+}

@@ -1,0 +1,29 @@
+.root {
+    -fx-background-image: url("treasure.jpg");
+    -fx-background-size: cover;
+    -fx-padding: 2em;
+    -fx-font-family: Alegreya; -fx-font-size: 25px;
+    -fx-font-style: bold;
+}
+
+.button {
+    -fx-border-color: white;
+    -fx-font-size: 25px;
+}
+.label {
+    -fx-font-size: 35px;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.list-cell:even {
+    -fx-background-color: white;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
