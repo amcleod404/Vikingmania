@@ -12,7 +12,7 @@ public class Player {
     private static Island currIsland;
     private static Forge forge = new Forge();
 
-    private static Ship ship = new Ship("Kingship", 15, 60, 2);
+    private static Ship ship = new Ship("Kingship", 15, 100, 100);
     private static double currentWealth = 500.00;
 
     public void setName(String s) {
@@ -22,18 +22,23 @@ public class Player {
     public void setDifficultyLevel(Difficulty f) {
         this.difficultyLevel = f;
     }
+
     public void setTotalSkillPoints(double b) {
         this.totalSkillPoints = b;
     }
+
     public void setSkillPointsPilot(double b) {
         this.skillPointsPilot = b;
     }
+
     public void setSkillPointsFighter(double b) {
         this.skillPointsFighter = b;
     }
+
     public static void setSkillPointsMerchant(double b) {
         skillPointsMerchant = b;
     }
+
     public void setSkillPointsEngineer(double b) {
         this.skillPointsEngineer = b;
     }
@@ -50,11 +55,11 @@ public class Player {
         return skillPointsMerchant;
     }
 
-    public double getSkillPointsPilot() {
+    public static double getSkillPointsPilot() {
         return skillPointsPilot;
     }
 
-    public double getSkillPointsFighter() {
+    public static double getSkillPointsFighter() {
         return skillPointsFighter;
     }
 
@@ -81,12 +86,15 @@ public class Player {
     public static double getCurrentWealth2() {
         return currentWealth;
     }
+
     public static Ship getShip() {
         return ship;
     }
+
     public static void setCurrentWealth(double x) {
         currentWealth = x;
     }
+
     public static void setCurr(MarketPlace mkt) {
         currMarket = mkt;
     }
@@ -106,4 +114,5 @@ public class Player {
     public static Forge getForge() {
         return forge;
     }
+
 }

@@ -19,10 +19,10 @@ public class Ship extends Stage {
     private VBox vbox2 = new VBox(75);
     private HBox hbox = new HBox(750);
     private Label nameLabel;
-    private Label cargoLabel;
+    private static Label cargoLabel;
     private Label itemLabel;
-    private Label fuelLabel;
-    private Label healthLabel;
+    private static Label fuelLabel;
+    private static Label healthLabel;
     private ListView<Item> listofItems = new ListView<>(Ship.getItemInventory());
     private Scene scene;
     private Button mktBtn = new Button("MarketPlace");
@@ -48,7 +48,7 @@ public class Ship extends Stage {
         return name;
     }
 
-    public int getFuelCapacity() {
+    public static int getFuelCapacity() {
         return fuelCapacity;
     }
 
@@ -60,7 +60,7 @@ public class Ship extends Stage {
         return itemInventory;
     }
 
-    public int getHealth() {
+    public static int getHealth() {
         return health;
     }
     public static List<Item> getItemInventory2() {
@@ -82,7 +82,23 @@ public class Ship extends Stage {
         this.show();
     }
 
-    public void setCargoCapacityLabel(int size) {
+    public static void setCargoCapacityLabel(int size) {
         cargoLabel.setText("Remaining Space: " + (cargoCapacity - size));
+    }
+
+    public static void setHealthLabel(int health) {
+        healthLabel.setText("Remaining Health: " + health);
+    }
+
+    public static void setFuelLabel(int fuel) {
+        fuelLabel.setText("Remaining Fuel: " + fuel);
+    }
+
+    public static void setHealth(int health) {
+        Ship.health = health;
+    }
+
+    public static void setFuelCapacity(int fuel) {
+        Ship.fuelCapacity = fuel;
     }
 }

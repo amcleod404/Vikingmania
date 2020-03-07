@@ -1,3 +1,4 @@
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -42,7 +43,7 @@ public class Universe extends Stage {
     private ImageView padding12 = new ImageView();
     private ImageView padding13 = new ImageView();
     private ImageView padding14 = new ImageView();
-    private ArrayList<Island> islands = new ArrayList<>();
+    private static ArrayList<Island> islands = new ArrayList<>();
     private Random rand = new Random();
     private Circle dot1 = new Circle(15, Paint.valueOf("black"));
     private Circle dot2 = new Circle(15, Paint.valueOf("black"));
@@ -56,6 +57,7 @@ public class Universe extends Stage {
     private Circle dot10 = new Circle(15, Paint.valueOf("black"));
     private Circle dot11 = new Circle(15, Paint.valueOf("black"));
     private Circle dot12 = new Circle(15, Paint.valueOf("black"));
+    private Bandit bandit = new Bandit();
     private Scene scene;
     private Island island1 = new Island("basic", "Hrolleifsdalsa", getDescription("rigid",
             "gold"),  Item.HEALTHPOTION, Item.BREASTPLATE, Item.ARROW,
@@ -187,11 +189,12 @@ public class Universe extends Stage {
         });
 
         dot2.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(1).setScene();
             Player.setCurrIsland(islands.get(1));
+            bandit.setScene();
             dot2.setStyle("-fx-fill: blue");
-            this.close();
             dot2.setUserData("visited");
+            this.close();
+
         });
 
         dot3.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
@@ -283,11 +286,9 @@ public class Universe extends Stage {
         dot1.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(0);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot1.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -300,11 +301,9 @@ public class Universe extends Stage {
         dot2.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(1);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot2.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -317,11 +316,9 @@ public class Universe extends Stage {
         dot3.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(2);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot3.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -334,11 +331,9 @@ public class Universe extends Stage {
         dot4.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(3);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot4.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -351,11 +346,9 @@ public class Universe extends Stage {
         dot5.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(4);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot5.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -368,11 +361,9 @@ public class Universe extends Stage {
         dot6.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(5);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot6.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -388,11 +379,9 @@ public class Universe extends Stage {
         dot7.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(6);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot7.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -405,11 +394,9 @@ public class Universe extends Stage {
         dot8.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(7);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot8.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -422,11 +409,9 @@ public class Universe extends Stage {
         dot9.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(8);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot9.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -439,11 +424,9 @@ public class Universe extends Stage {
         dot10.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(9);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot10.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -456,11 +439,9 @@ public class Universe extends Stage {
         dot11.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(10);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot11.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -473,11 +454,9 @@ public class Universe extends Stage {
         dot12.addEventHandler(MouseEvent.MOUSE_ENTERED, mouseEvent -> {
             Island island = islands.get(11);
             String name = island.getName();
-            String techlevel = island.getTechLevel();
-            String description = island.getDescription();
             Text text;
             if (dot12.getUserData().equals("visited")) {
-                text = new Text(name + "\n" + techlevel + "\n" + description);
+                text = new Text(name);
             } else {
                 text = new Text("UNDISCOVERED");
             }
@@ -551,6 +530,10 @@ public class Universe extends Stage {
     private String getDescription(String terrain, String element) {
         return String.format("This island is known for its %s \n terrain and the "
                 + "most common element \n found on this " + "island is %s", terrain, element);
+    }
+
+    public static ArrayList<Island> getIslands() {
+        return islands;
     }
 
 }

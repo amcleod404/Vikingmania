@@ -13,42 +13,7 @@ import java.util.Collections;
 import java.util.Random;
 
 public class ThirdScene extends Stage {
-    private Island island1 = new Island("basic", "Hrolleifsdalsa", getDescription("rigid",
-            "gold"),  Item.HEALTHPOTION, Item.BREASTPLATE, Item.ARROW,
-            Item.UNIFORM);
-    private Island island2 = new Island("basic", "Flokavaroi", getDescription("rigid",
-            "gold"),  Item.BREASTPLATE, Item.HEALTHPOTION, Item.BOOKS,
-            Item.BOW);
-    private Island island3 = new Island("basic", "Rauoaloekr", getDescription("rigid",
-            "gold"),  Item.HEALTHPOTION, Item.RUM, Item.SKYR,
-            Item.GAUNTLET);
-    private Island island4 = new Island("primitive", "Krokr", getDescription("rigid",
-            "gold"),  Item.DIAMOND, Item.ARROW, Item.BOOTS,
-            Item.BREASTPLATE);
-    private Island island5 = new Island("primitive", "Miklagil", getDescription("rigid",
-            "gold"),  Item.DIAMOND, Item.KNIFE, Item.BOOTS,
-            Item.GAUNTLET);
-    private Island island6 = new Island("primitive", "Lofot", getDescription("rigid",
-            "gold"),  Item.DIAMOND, Item.ARROW, Item.KNIFE,
-            Item.GAUNTLET);
-    private Island island7 = new Island("enhanced", "Grunnafjoror", getDescription("rigid",
-            "gold"),  Item.ARROW, Item.BOW, Item.BOOTS,
-            Item.KNIFE);
-    private Island island8 = new Island("enhanced", "Almenningar", getDescription("rigid",
-            "gold"),  Item.DIAMOND, Item.ARROW, Item.BOOTS,
-            Item.GAUNTLET);
-    private Island island9 = new Island("enhanced", "Haugar", getDescription("rigid",
-            "gold"),  Item.DIAMOND, Item.BOOKS, Item.KNIFE,
-            Item.GAUNTLET);
-    private Island island10 = new Island("legendary", "Skruoey", getDescription("rigid",
-            "gold"),  Item.HEALTHPOTION, Item.RUM, Item.CHAINS,
-            Item.SKYR);
-    private Island island11 = new Island("legendary", "Landbrot", getDescription("rigid",
-            "gold"),  Item.DIAMOND, Item.HELMET, Item.BOOTS,
-            Item.GAUNTLET);
-    private Island island12 = new Island("complete", "Bjarkey", getDescription("rigid",
-            "gold"),  Item.DIAMOND, Item.ARROW, Item.BOOTS,
-            Item.GAUNTLET);
+
     private ArrayList<Island> islands = new ArrayList<>();
     private Random rand = new Random();
     private Player player1 = new Player();
@@ -74,19 +39,6 @@ public class ThirdScene extends Stage {
 
 
     public ThirdScene() {
-        islands.add(island1);
-        islands.add(island2);
-        islands.add(island3);
-        islands.add(island4);
-        islands.add(island5);
-        islands.add(island6);
-        islands.add(island7);
-        islands.add(island8);
-        islands.add(island9);
-        islands.add(island10);
-        islands.add(island11);
-        islands.add(island12);
-        Collections.shuffle(islands);
         playerTextStyle();
         difficultyStyle();
         awardedCreditsStyle();
@@ -151,8 +103,8 @@ public class ThirdScene extends Stage {
             if (!clip.isPlaying()) {
                 clip.play();
             }
-            islands.get(0).setScene();
-            Player.setCurrIsland(islands.get(0));
+            Universe.getIslands().get(0).setScene();
+            Player.setCurrIsland(Universe.getIslands().get(0));
             this.close();
         });
     }

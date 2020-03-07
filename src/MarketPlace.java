@@ -35,17 +35,17 @@ public class MarketPlace extends Stage {
         this.item2 = item2;
         this.item3 = item3;
         this.item4 = item4;
-        RadioButton radioItem1 = new RadioButton(item1.name() + ": " + (item1.getX()
-                + (500.0 / (Player.getSkillPointsMerchant2() + 1))));
+        RadioButton radioItem1 = new RadioButton(item1.name() + ": " + (int) (item1.getX()
+                + (500 / (Player.getSkillPointsMerchant2() + 1))));
         radioItem1.setUserData(item1);
-        RadioButton radioItem2 = new RadioButton(item2.name() + ": " + (item2.getX()
-                + (500.0 / (Player.getSkillPointsMerchant2() + 1))));
+        RadioButton radioItem2 = new RadioButton(item2.name() + ": " + (int) (item2.getX()
+                + (500 / (Player.getSkillPointsMerchant2() + 1))));
         radioItem2.setUserData(item2);
-        RadioButton radioItem3 = new RadioButton(item3.name() + ": " + (item3.getX()
-                + (500.0 / (Player.getSkillPointsMerchant2() + 1))));
+        RadioButton radioItem3 = new RadioButton(item3.name() + ": " + (int) (item3.getX()
+                + (500 / (Player.getSkillPointsMerchant2() + 1))));
         radioItem3.setUserData(item3);
-        RadioButton radioItem4 = new RadioButton(item4.name() + ": " + (item4.getX()
-                + (500.0 / (Player.getSkillPointsMerchant2() + 1))));
+        RadioButton radioItem4 = new RadioButton(item4.name() + ": " + (int) (item4.getX()
+                + (500 / (Player.getSkillPointsMerchant2() + 1))));
         radioItem4.setUserData(item4);
         radioItem1.setToggleGroup(groupItems);
         radioItem2.setToggleGroup(groupItems);
@@ -108,8 +108,8 @@ public class MarketPlace extends Stage {
                 errorAlert.showAndWait();
             } else {
                 Player.getShip().getItemInventory().add(itm1);
-                Player.setCurrentWealth(Player.getCurrentWealth2() - (itm1.getX()
-                        + (500.0 / (Player.getSkillPointsMerchant2() + 1))));
+                Player.setCurrentWealth((int) (Player.getCurrentWealth2() - (itm1.getX()
+                        + (500.0 / (Player.getSkillPointsMerchant2() + 1)))));
                 Label x = new Label(itm1.toString());
                 availableWealth.setText("Your Current Wealth:" + Player.getCurrentWealth2());
                 Forge.getAvailableWealthLabel().setText("Your Current Wealth:"
@@ -146,7 +146,7 @@ public class MarketPlace extends Stage {
                 if (x < 0) {
                     x = 0;
                 }
-                Player.setCurrentWealth(x + Player.getCurrentWealth2());
+                Player.setCurrentWealth((int) (x + Player.getCurrentWealth2()));
                 availableWealth.setText("Your Current Wealth:" + Player.getCurrentWealth2());
                 Forge.getAvailableWealthLabel().setText("Your Current Wealth:"
                         + Player.getCurrentWealth2());
