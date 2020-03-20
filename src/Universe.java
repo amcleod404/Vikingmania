@@ -1,5 +1,5 @@
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -181,103 +181,227 @@ public class Universe extends Stage {
 
     public void setIslandClickedEvent() {
         dot1.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(0).setScene();
-            Player.setCurrIsland(islands.get(0));
-            dot1.setStyle("-fx-fill: blue");
-            dot1.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                dot1.setStyle("-fx-fill: blue");
+                dot1.setUserData("visited");
+                if (Player.getShip().getItemInventory(5).size() != 0
+                        && Player.getCurrentWealth2() > 10) {
+                    Cop cop1 = new Cop();
+                    cop1.setIslandHolder(islands.get(0));
+                    cop1.setDotPrev(dot1);
+                    cop1.setScene();
+                    this.close();
+                } else {
+                    islands.get(0).setScene();
+                    Player.setCurrIsland(islands.get(0));
+                    this.close();
+                }
+
+            }
         });
 
         dot2.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            Player.setCurrIsland(islands.get(1));
-            bandit.setScene();
-            dot2.setStyle("-fx-fill: blue");
-            dot2.setUserData("visited");
-            this.close();
-
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                dot2.setStyle("-fx-fill: blue");
+                dot2.setUserData("visited");
+                Bandit bdn1 = new Bandit();
+                bdn1.setIslandHolder1(islands.get(1));
+                bdn1.setDotPrev1(dot1);
+                bdn1.setScene();
+                this.close();
+            }
         });
 
         dot3.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(2).setScene();
-            Player.setCurrIsland(islands.get(2));
-            dot3.setStyle("-fx-fill: blue");
-            dot3.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(2).setScene();
+                Player.setCurrIsland(islands.get(2));
+                dot3.setStyle("-fx-fill: blue");
+                dot3.setUserData("visited");
+                this.close();
+            }
         });
 
         dot4.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(3).setScene();
-            Player.setCurrIsland(islands.get(3));
-            dot4.setStyle("-fx-fill: blue");
-            dot4.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(3).setScene();
+                Player.setCurrIsland(islands.get(3));
+                dot4.setStyle("-fx-fill: blue");
+                dot4.setUserData("visited");
+                this.close();
+            }
         });
 
         dot5.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(4).setScene();
-            Player.setCurrIsland(islands.get(4));
-            dot5.setStyle("-fx-fill: blue");
-            dot5.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                dot5.setStyle("-fx-fill: blue");
+                dot5.setUserData("visited");
+                if (Player.getShip().getItemInventory(5).size() != 0
+                        && Player.getCurrentWealth2() > 10) {
+                    Cop cop1 = new Cop();
+                    cop1.setIslandHolder(islands.get(4));
+                    cop1.setDotPrev(dot4);
+                    cop1.setScene();
+                    this.close();
+                } else {
+                    islands.get(4).setScene();
+                    Player.setCurrIsland(islands.get(4));
+                    this.close();
+                }
+            }
         });
 
         dot6.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(5).setScene();
-            Player.setCurrIsland(islands.get(5));
-            dot6.setStyle("-fx-fill: blue");
-            dot6.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(5).setScene();
+                Player.setCurrIsland(islands.get(5));
+                dot6.setStyle("-fx-fill: blue");
+                dot6.setUserData("visited");
+                this.close();
+            }
         });
 
     }
 
     public void setIslandClickedEvent2() {
         dot7.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(6).setScene();
-            Player.setCurrIsland(islands.get(6));
-            dot7.setStyle("-fx-fill: blue");
-            dot7.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(6).setScene();
+                Player.setCurrIsland(islands.get(6));
+                dot7.setStyle("-fx-fill: blue");
+                dot7.setUserData("visited");
+                this.close();
+            }
         });
 
         dot8.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(7).setScene();
-            Player.setCurrIsland(islands.get(7));
-            dot8.setStyle("-fx-fill: blue");
-            dot8.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(7).setScene();
+                Player.setCurrIsland(islands.get(7));
+                dot8.setStyle("-fx-fill: blue");
+                dot8.setUserData("visited");
+                this.close();
+            }
         });
 
         dot9.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(8).setScene();
-            Player.setCurrIsland(islands.get(8));
-            dot9.setStyle("-fx-fill: blue");
-            dot9.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(8).setScene();
+                Player.setCurrIsland(islands.get(8));
+                dot9.setStyle("-fx-fill: blue");
+                dot9.setUserData("visited");
+                this.close();
+            }
         });
 
         dot10.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(9).setScene();
-            Player.setCurrIsland(islands.get(9));
-            dot10.setStyle("-fx-fill: blue");
-            dot10.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(9).setScene();
+                Player.setCurrIsland(islands.get(9));
+                dot10.setStyle("-fx-fill: blue");
+                dot10.setUserData("visited");
+                this.close();
+            }
         });
 
         dot11.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(10).setScene();
-            Player.setCurrIsland(islands.get(10));
-            dot11.setStyle("-fx-fill: blue");
-            dot11.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                islands.get(10).setScene();
+                Player.setCurrIsland(islands.get(10));
+                dot11.setStyle("-fx-fill: blue");
+                dot11.setUserData("visited");
+                this.close();
+            }
         });
 
         dot12.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            islands.get(11).setScene();
-            Player.setCurrIsland(islands.get(11));
-            dot12.setStyle("-fx-fill: blue");
-            dot12.setUserData("visited");
-            this.close();
+            if (Player.getShip().getFuelCapacity(3) < 15) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("You do not have enough fuel to travel.");
+                errorAlert.showAndWait();
+            } else {
+                Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
+                Ship.setFuelLabel(Ship.getFuelCapacity());
+                dot12.setStyle("-fx-fill: blue");
+                dot12.setUserData("visited");
+                if(Player.getCurrentWealth2() > 0) {
+                    Trader trader1 = new Trader();
+                    trader1.setScene();
+                    trader1.setDotPrev2(dot11);
+                    trader1.setIslandHolder2(islands.get(11));
+                    this.close();
+                } else {
+                    islands.get(11).setScene();
+                    Player.setCurrIsland(islands.get(11));
+                    this.close();
+                }
+            }
         });
     }
 

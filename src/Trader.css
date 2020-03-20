@@ -1,0 +1,12 @@
+.root {
+    -fx-background-image: url("Trader.jpg");
+    -fx-background-size: cover;
+    -fx-padding: 3em;
+    -fx-font-family: Alegreya;
+    -fx-font-size: 30px;
+}
+
+.button {
+    -fx-border-color: white;
+    -fx-font-size: 20px;
+}

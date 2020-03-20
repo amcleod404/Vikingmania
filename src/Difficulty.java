@@ -1,8 +1,8 @@
 public enum Difficulty {
-    ROOKIE(100, 800),
-    BEGINNER(75, 600),
-    INTERMEDIATE(50, 400),
-    ADVANCED(25, 200);
+    ROOKIE(100, 500),
+    BEGINNER(75, 500),
+    INTERMEDIATE(50, 500),
+    ADVANCED(25, 500);
 
     private double skillPointAllocation;
     private int numCredits;

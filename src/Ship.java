@@ -52,11 +52,15 @@ public class Ship extends Stage {
         return fuelCapacity;
     }
 
-    public int getCargoCapacity() {
+    public static int getCargoCapacity() {
         return cargoCapacity;
     }
 
     public  static ObservableList<Item> getItemInventory() {
+        return itemInventory;
+    }
+
+    public ObservableList<Item> getItemInventory(int x) {
         return itemInventory;
     }
 
@@ -101,4 +105,15 @@ public class Ship extends Stage {
     public static void setFuelCapacity(int fuel) {
         Ship.fuelCapacity = fuel;
     }
+
+    public void setFuelCapacity2(int fuel) {
+        fuelCapacity = fuel;
+    }
+
+    public int getFuelCapacity(int x) {
+        return getFuelCapacity();
+    }
+
+
 }
+

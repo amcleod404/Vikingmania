@@ -3,13 +3,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-//import javafx.scene.media.AudioClip;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import javafx.scene.layout.Region;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class ThirdScene extends Stage {
