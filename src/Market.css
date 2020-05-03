@@ -2,15 +2,15 @@
     -fx-background-image: url("market.jpg");
     -fx-background-size: cover;
     -fx-padding: 3em;
-    -fx-font-family: Alegreya; -fx-font-size: 25px;
+    -fx-font-family: Alegreya; -fx-font-size: 20px;
 }
 
 .button {
     -fx-border-color: black;
-    -fx-font-size: 25px;
+    -fx-font-size: 20px;
 }
 .label {
-    -fx-font-size: 35px;
+    -fx-font-size: 25px;
 }
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {

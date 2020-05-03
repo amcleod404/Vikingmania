@@ -77,7 +77,7 @@ public class Forge extends Stage {
                     (CharacterUpgrades) availableUpgrades.getSelectionModel().getSelectedItem();
             if (itm1.getX() > Player.getCurrentWealth2()) {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("Purchase error");
+                errorAlert.setHeaderText("Purchase Error");
                 errorAlert.setContentText("You do no have enough money to purchase this item.");
                 errorAlert.showAndWait();
             } else {

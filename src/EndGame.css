@@ -1,9 +1,10 @@
 .root {
     -fx-background-image: url(blue.jpg);
     -fx-background-size: cover;
-    -fx-padding: 5em;
+    -fx-padding: 3em;
     -fx-font-family: Alegreya; -fx-font-size: 20px;
 }
+
 .button {
     -fx-border-color: black;
 }

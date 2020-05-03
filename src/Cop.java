@@ -60,7 +60,7 @@ public class Cop extends Stage {
             int luckyNum = (int) ((Math.random() * 100));
             if (chance > luckyNum) {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("You Successfully escaped!");
+                errorAlert.setHeaderText("You successfully escaped!");
                 errorAlert.showAndWait();
                 if (Universe.getIslands().indexOf(islandHolder) == 0) {
                     Universe.getIslands().get(0).setScene();
@@ -83,25 +83,37 @@ public class Cop extends Stage {
                 errorAlert.setContentText("stolen item will be taken, "
                         + "ship health will be damaged,"
                         + "you will give up 10 of your wealth,"
-                        + "and return to the previous region");
+                        + "and return to the previous region.");
                 errorAlert.showAndWait();
                 Ship.getItemInventory().remove(itmCatch);
                 Player.setCurrentWealth(Player.getCurrentWealth2() - 10);
                 Ship.setHealth(Ship.getHealth() - 50);
                 Ship.setHealthLabel(Ship.getHealth());
                 if (Universe.getIslands().indexOf(islandHolder) == 0) {
-                    Universe.getIslands().get(0).setScene();
-                    Player.setCurrIsland(Universe.getIslands().get(0));
-                    this.close();
+                    if (Ship.getHealth() <= 0) {
+                        GameOver gm1 = new GameOver();
+                        gm1.setScene();
+                        this.close();
+                    } else {
+                        Universe.getIslands().get(0).setScene();
+                        Player.setCurrIsland(Universe.getIslands().get(0));
+                        this.close();
+                    }
                 } else {
                     Ship.setFuelCapacity(Ship.getFuelCapacity() - 15);
                     Ship.setFuelLabel(Ship.getFuelCapacity());
                     int index = Universe.getIslands().indexOf(islandHolder) - 1;
                     dotPrev.setStyle("-fx-fill: blue");
                     dotPrev.setUserData("visited");
-                    Universe.getIslands().get(index).setScene();
-                    Player.setCurrIsland(Universe.getIslands().get(index));
-                    this.close();
+                    if (Ship.getHealth() <= 0) {
+                        GameOver gm1 = new GameOver();
+                        gm1.setScene();
+                        this.close();
+                    } else {
+                        Universe.getIslands().get(index).setScene();
+                        Player.setCurrIsland(Universe.getIslands().get(index));
+                        this.close();
+                    }
                 }
             }
 
@@ -116,15 +128,15 @@ public class Cop extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You successfully fought off the police");
                 errorAlert.setContentText("you will keep all your items,"
-                        + "and go to the desired island");
+                        + "and go to the desired island.");
                 errorAlert.showAndWait();
                 islandHolder.setScene();
                 Player.setCurrIsland(islandHolder);
                 this.close();
             } else {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("You did not successfully fight off the police");
-                errorAlert.setContentText("you will lose stolen item");
+                errorAlert.setHeaderText("You did not successfully fight off the police.");
+                errorAlert.setContentText("you will lose stolen item.");
                 errorAlert.showAndWait();
                 Ship.getItemInventory().remove(itmCatch);
                 islandHolder.setScene();

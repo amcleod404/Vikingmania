@@ -47,6 +47,10 @@ public class Player {
         return skillPointsEngineer;
     }
 
+    public static double getSkillPointsEngineer2() {
+        return skillPointsEngineer;
+    }
+
     public double getTotalSkillPoints() {
         return totalSkillPoints;
     }

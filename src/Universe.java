@@ -88,7 +88,7 @@ public class Universe extends Stage {
             Item.GAUNTLET);
     private Island island10 = new Island("legendary", "Skruoey", getDescription("rigid",
             "gold"),  Item.HEALTHPOTION, Item.RUM, Item.CHAINS,
-            Item.SKYR);
+            Item.SKYR, Item.AETHER);
     private Island island11 = new Island("legendary", "Landbrot", getDescription("rigid",
             "gold"),  Item.DIAMOND, Item.HELMET, Item.BOOTS,
             Item.GAUNTLET);
@@ -185,6 +185,9 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
@@ -202,7 +205,6 @@ public class Universe extends Stage {
                     Player.setCurrIsland(islands.get(0));
                     this.close();
                 }
-
             }
         });
 
@@ -211,6 +213,9 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
@@ -229,13 +234,16 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(2).setScene();
-                Player.setCurrIsland(islands.get(2));
                 dot3.setStyle("-fx-fill: blue");
                 dot3.setUserData("visited");
+                islands.get(2).setScene();
+                Player.setCurrIsland(islands.get(2));
                 this.close();
             }
         });
@@ -245,13 +253,16 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(3).setScene();
-                Player.setCurrIsland(islands.get(3));
                 dot4.setStyle("-fx-fill: blue");
                 dot4.setUserData("visited");
+                islands.get(3).setScene();
+                Player.setCurrIsland(islands.get(3));
                 this.close();
             }
         });
@@ -261,6 +272,9 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
@@ -286,13 +300,16 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(5).setScene();
-                Player.setCurrIsland(islands.get(5));
                 dot6.setStyle("-fx-fill: blue");
                 dot6.setUserData("visited");
+                islands.get(5).setScene();
+                Player.setCurrIsland(islands.get(5));
                 this.close();
             }
         });
@@ -305,13 +322,19 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(6).setScene();
-                Player.setCurrIsland(islands.get(6));
                 dot7.setStyle("-fx-fill: blue");
                 dot7.setUserData("visited");
+                Bandit bdn1 = new Bandit();
+                bdn1.setIslandHolder1(islands.get(6));
+                bdn1.setDotPrev1(dot6);
+                bdn1.setScene();
+                this.close();
                 this.close();
             }
         });
@@ -321,13 +344,16 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(7).setScene();
-                Player.setCurrIsland(islands.get(7));
                 dot8.setStyle("-fx-fill: blue");
                 dot8.setUserData("visited");
+                islands.get(7).setScene();
+                Player.setCurrIsland(islands.get(7));
                 this.close();
             }
         });
@@ -337,13 +363,19 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(8).setScene();
-                Player.setCurrIsland(islands.get(8));
                 dot9.setStyle("-fx-fill: blue");
                 dot9.setUserData("visited");
+                Bandit bdn1 = new Bandit();
+                bdn1.setIslandHolder1(islands.get(8));
+                bdn1.setDotPrev1(dot8);
+                bdn1.setScene();
+                this.close();
                 this.close();
             }
         });
@@ -353,13 +385,16 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(9).setScene();
-                Player.setCurrIsland(islands.get(9));
                 dot10.setStyle("-fx-fill: blue");
                 dot10.setUserData("visited");
+                islands.get(9).setScene();
+                Player.setCurrIsland(islands.get(9));
                 this.close();
             }
         });
@@ -369,13 +404,16 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
-                islands.get(10).setScene();
-                Player.setCurrIsland(islands.get(10));
                 dot11.setStyle("-fx-fill: blue");
                 dot11.setUserData("visited");
+                islands.get(10).setScene();
+                Player.setCurrIsland(islands.get(10));
                 this.close();
             }
         });
@@ -385,12 +423,15 @@ public class Universe extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("You do not have enough fuel to travel.");
                 errorAlert.showAndWait();
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
             } else {
                 Player.getShip().setFuelCapacity2(Player.getShip().getFuelCapacity() - 15);
                 Ship.setFuelLabel(Ship.getFuelCapacity());
                 dot12.setStyle("-fx-fill: blue");
                 dot12.setUserData("visited");
-                if(Player.getCurrentWealth2() > 0) {
+                if (Player.getCurrentWealth2() > 0) {
                     Trader trader1 = new Trader();
                     trader1.setScene();
                     trader1.setDotPrev2(dot11);

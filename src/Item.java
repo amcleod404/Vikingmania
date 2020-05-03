@@ -24,17 +24,27 @@ public enum  Item  {
     BOW,
     ARROW,
     RUM,
-    BOOKS;
+    BOOKS,
+    AETHER;
     private double x;
     private double sellPrice;
+    private double specialPrice;
     private Item() {
         Player player = new Player();
         this.x = 2 + this.toString().length() + 7;
         this.sellPrice = this.x - 5;
+        this.specialPrice = 432;
     }
 
     public double getX() {
         return x;
+    }
+
+    public double getSellPrice() {
+        return sellPrice;
+    }
+    public double getSpecialPrice() {
+        return this.specialPrice;
     }
 
     @Override

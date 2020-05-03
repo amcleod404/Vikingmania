@@ -30,7 +30,7 @@ public class Bandit extends Stage {
     private Scene scene;
 
     public Bandit() {
-        Label header = new Label("A Bandit appears!");
+        Label header = new Label("A Bandit Appears!");
         header.setStyle("-fx-font-size: 60px");
         Label subheader = new Label("He requests " + tax + " credits.");
         subheader.setStyle("-fx-font-size: 40px");
@@ -70,9 +70,15 @@ public class Bandit extends Stage {
                     Ship.getItemInventory().clear();
                     Ship.setCargoCapacityLabel(0);
                 }
-                islandHolder1.setScene();
-                Player.setCurrIsland(islandHolder1);
-                this.close();
+                if (Ship.getHealth() <= 0) {
+                    GameOver gm1 = new GameOver();
+                    gm1.setScene();
+                    this.close();
+                } else {
+                    islandHolder1.setScene();
+                    Player.setCurrIsland(islandHolder1);
+                    this.close();
+                }
             }
         });
 
@@ -84,7 +90,7 @@ public class Bandit extends Stage {
             int luckyNum = (int) ((Math.random() * 100));
             if (chance > luckyNum) {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("You Successfully escaped!");
+                errorAlert.setHeaderText("You successfully escaped!");
                 errorAlert.showAndWait();
                 if (Universe.getIslands().indexOf(islandHolder1) == 0) {
                     Universe.getIslands().get(0).setScene();
@@ -104,17 +110,22 @@ public class Bandit extends Stage {
 
             } else {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("You did not Successfully escape!");
+                errorAlert.setHeaderText("You did not successfully escape!");
                 errorAlert.setContentText("Bandit takes all your credits & damages your ship");
                 errorAlert.showAndWait();
                 Player.setCurrentWealth(0);
                 Ship.setHealth(Ship.getHealth() - 50);
                 Ship.setHealthLabel(Ship.getHealth());
-                islandHolder1.setScene();
-                Player.setCurrIsland(islandHolder1);
-                this.close();
+                if (Ship.getHealth() <= 0) {
+                    GameOver gm1 = new GameOver();
+                    gm1.setScene();
+                    this.close();
+                } else {
+                    islandHolder1.setScene();
+                    Player.setCurrIsland(islandHolder1);
+                    this.close();
+                }
             }
-
         });
 
     }
@@ -126,22 +137,26 @@ public class Bandit extends Stage {
             int luckyNum = (int) ((Math.random() * 100));
             if (chance > luckyNum) {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("You Successfully fought off the bandit");
+                errorAlert.setHeaderText("You successfully fought off the bandit");
                 errorAlert.showAndWait();
                 Player.setCurrentWealth(Player.getCurrentWealth2() + tax);
             } else {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("You did not Successfully fight off the bandit");
+                errorAlert.setHeaderText("You did not successfully fight off the bandit");
                 errorAlert.showAndWait();
                 Player.setCurrentWealth(0);
                 Ship.setHealth(Ship.getHealth() - 50);
                 Ship.setHealthLabel(Ship.getHealth());
-
             }
-            islandHolder1.setScene();
-            Player.setCurrIsland(islandHolder1);
-            this.close();
-
+            if (Ship.getHealth() <= 0) {
+                GameOver gm1 = new GameOver();
+                gm1.setScene();
+                this.close();
+            } else {
+                islandHolder1.setScene();
+                Player.setCurrIsland(islandHolder1);
+                this.close();
+            }
         });
 
     }

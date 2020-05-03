@@ -31,12 +31,17 @@ public class Trader extends Stage {
     private double priceTracker;
 
     public Trader() {
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].name().equals(Item.AETHER)) {
+                items[i] = Item.DIAMOND;
+            }
+        }
         int max = items.length - 1;
         int min = 0;
         int range = max - min + 1;
         int index = (int) (Math.random() * range) + min;
         this.toSell = items[index];
-        priceTracker = toSell.getX() - 5;
+        priceTracker = toSell.getX();
         this.itemToSell = new Label("Item to sell: " + toSell.name() + " price: " + priceTracker);
         inventory2.setPrefWidth(500);
         buttonOptions2.getChildren().addAll(buyItems, ignoreTrader, rob, neg);
@@ -71,12 +76,11 @@ public class Trader extends Stage {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Purchase Error");
                 errorAlert.setContentText("You do not have enough credits to buy this item or "
-                        + "you will Exceed Cargo Capacity");
+                        + "you will exceed cargo capacity.");
                 errorAlert.showAndWait();
             } else {
                 Player.getShip().getItemInventory().addAll(toSell);
-                Player.setCurrentWealth(Player.getCurrentWealth2() - ((int) (toSell.getX()
-                        + ((Player.getSkillPointsMerchant2() % 100) + 1))));
+                Player.setCurrentWealth(Player.getCurrentWealth2() - priceTracker);
                 islandHolder2.setScene();
                 Player.setCurrIsland(islandHolder2);
                 this.close();
@@ -119,10 +123,16 @@ public class Trader extends Stage {
                             + "He will damage your health");
                     errorAlert.showAndWait();
                     Ship.setHealth(Ship.getHealth() - 50);
-                    Ship.setHealthLabel(Ship.getHealth());
-                    islandHolder2.setScene();
-                    Player.setCurrIsland(islandHolder2);
-                    this.close();
+                    if (Ship.getHealth() <= 0) {
+                        GameOver gm1 = new GameOver();
+                        gm1.setScene();
+                        this.close();
+                    } else {
+                        Ship.setHealthLabel(Ship.getHealth());
+                        islandHolder2.setScene();
+                        Player.setCurrIsland(islandHolder2);
+                        this.close();
+                    }
                 }
             }
         });
